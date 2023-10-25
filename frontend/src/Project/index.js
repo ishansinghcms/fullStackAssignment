@@ -11,7 +11,7 @@ function Project() {
   const [selectedOrder, setSelectedOrder] = useState(null);
   useEffect(() => {
     axios
-      .get("http://localhost:3001/suppliers")
+      .get("https://fullstack-ld4q.onrender.com/suppliers")
       .then((response) => {
         setSupplierName(response.data);
       })
@@ -26,7 +26,7 @@ function Project() {
     console.log(`e.target.value->${supplier}`);
     const encodedSupplierName = encodeURIComponent(supplier);
     axios
-      .get(`http://localhost:3001/purchase-orders/${encodedSupplierName}`)
+      .get(`https://fullstack-ld4q.onrender.com/purchase-orders/${encodedSupplierName}`)
       .then((response) => {
         const newPurchaseOrders = response.data;
         setPurchaseOrders(newPurchaseOrders);
