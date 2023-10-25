@@ -11,7 +11,7 @@ function Project() {
   const [selectedOrder, setSelectedOrder] = useState(null);
   useEffect(() => {
     axios
-      .get("https://fullstack-ld4q.onrender.com/suppliers")
+      .get("https://backendfullstack.netlify.app/.netlify/functions/api/suppliers")
       .then((response) => {
         setSupplierName(response.data);
       })
@@ -26,7 +26,7 @@ function Project() {
     console.log(`e.target.value->${supplier}`);
     const encodedSupplierName = encodeURIComponent(supplier);
     axios
-      .get(`https://fullstack-ld4q.onrender.com/purchase-orders/${encodedSupplierName}`)
+      .get(`https://backendfullstack.netlify.app/.netlify/functions/api/purchase-orders/${encodedSupplierName}`)
       .then((response) => {
         const newPurchaseOrders = response.data;
         setPurchaseOrders(newPurchaseOrders);
