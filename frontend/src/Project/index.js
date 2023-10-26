@@ -109,13 +109,7 @@ function Project() {
               >
                 {`Order ${index + 1} = PO_NUMBER: ${
                   order.PONumber
-                } || ORDER_DATE: ${order.OrderDate} || BUYER: ${
-                  order.Buyer
-                } || ACCOUNT_NO: ${order.AccountNumber} || SUPPLIER: ${
-                  order.Supplier
-                } || ITEM: ${order.Item} || QTY: ${order.Qty} || ORDER_VALUE: ${
-                  order.OrderValue
-                }`}
+                } || DESCRIPTION: ${order.Description}`}
               </option>
             ))}
           </select>
